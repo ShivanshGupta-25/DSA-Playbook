@@ -1,26 +1,18 @@
-def checkRotatedSorted(arr, n):
-    ascending = True
-    if arr[0] > arr[1]:
-        ascending = False
-    change = 0
-    if ascending:
-        for i in range(1, n):
-            if arr[i] < arr[i-1] and change == 0:
-                change = 1
-            elif arr[i] > arr[i-1] and change == 1:
-                return False
-        return True
-    else:
-        for i in range(1, n):
-            if arr[i] > arr[i-1] and change == 0:
-                change = 1
-            elif arr[i] < arr[i-1] and change == 1:
-                return False
-        return True
+class Solution:
+    def checkRotatedSorted(self, nums):
+        n = len(nums)
+        count = 0
+
+        for i in range(n):
+            if nums[i] > nums[(i + 1) % n]:
+                count += 1
+
+        return count <= 1
 
 arr = [3,4,5,1,7,2]
 n = len(arr)
-if checkRotatedSorted(arr, n):
+sol = Solution()
+if sol.checkRotatedSorted(arr):
     print("true")
 else:
     print("false")

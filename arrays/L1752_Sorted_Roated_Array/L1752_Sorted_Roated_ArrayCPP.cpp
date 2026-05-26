@@ -1,33 +1,16 @@
 #include<iostream>
 using namespace std;
 
-bool checkRotatedSorted(int arr[], int n) {
-    bool ascending = true;
-    if(arr[0] > arr[1]){
-        ascending = false;
-    }
-    int change = 0;
-    if(ascending){
-        for(int i = 1; i < n; i++){
-            if(arr[i] < arr[i-1] && change == 0){
-                change = 1;
-            }
-            else if(arr[i] > arr[i-1] && change == 1){
-                return false;
-            }
+bool checkRotatedSorted(int nums[], int n) {
+    int count = 0;
+
+    for(int i = 0; i < n; i++) {
+        if(nums[i] > nums[(i + 1) % n]) {
+            count++;
         }
     }
-    else{
-        for(int i = 1; i < n; i++){
-            if(arr[i] > arr[i-1] && change == 0){
-                change = 1;
-            }
-            else if(arr[i] < arr[i-1] && change == 1){
-                return false;
-            }
-        }
-    }
-    return true;
+
+    return count <= 1;
 }
 
 int main() {
