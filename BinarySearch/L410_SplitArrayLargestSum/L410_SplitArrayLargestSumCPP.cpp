@@ -3,9 +3,6 @@
 #include<algorithm>
 using namespace std;
 
-
-using namespace std;
-
 int splitArray(vector<int>& nums, int k) {
     int low = *max_element(nums.begin(), nums.end());
     int high = 0;
