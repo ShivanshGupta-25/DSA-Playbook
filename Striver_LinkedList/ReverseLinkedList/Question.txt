@@ -1,0 +1,22 @@
+Reverse a Doubly Linked List
+
+Problem Statement: Given a doubly linked list of size ‘N’ consisting of positive integers, your task is to reverse it and return the head of the modified doubly linked list.
+
+Examples
+Input : DLL - 1 <-> 2 <-> 3 <-> 4
+
+
+Output
+: DLL - 4 <-> 3 <-> 2 <-> 1
+
+Explanation
+: The doubly linked list is reversed and its last node is returned at the new head pointer.
+
+Input: DLL-10 <-> 20 <-> 30
+
+
+Output
+: DLL - 30 <-> 20 <-> 10
+
+Explanation
+: In this case, the doubly linked list is reversed and its former tail is returned as its new head
